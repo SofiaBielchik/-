@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>звіти</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div>
+        <h1 class="pochatok">Звіти з лабораторних робіт</h1>
+        <h2 class="pochatok">З дисципліни "WEB-орієнтовані технології.Основи FRONTEND та BACKEND розробок"</h2>
+        <h3 class="pochatok">Студентки групи ІС-21 Бєльчик Софії Олександрівни</h3>
+    </div>
+    <img src="images/photo.jpg" alt="" >
+</header>
+
+<main>
+
+    <div class="labs">
+
+        <div class="cell">
+            <a href="index.html">Лабораторна робота 1</a>
+        </div>
+        <div class="cell">
+            <a href="zvit2.html">Лабораторна робота 2</a>
+        </div>
+        <div class="cell">
+            <a href="zvit3.html">Лабораторна робота 3</a>
+        </div>
+        <div class="cell">
+            <a href="zvit4.html">Лабораторна робота 4</a>
+        </div>
+        <div class="cell">
+            <a href="zvit5.html">Лабораторна робота 5</a>
+        </div>
+        <div class="cell">
+            <a href="zvit6.html">Лабораторна робота 6</a>
+        </div>
+        <div class="cell">
+            <a href="index.html">Лабораторна робота 7</a>
+        </div>
+        <div class="cell">
+            <a href="index.html">Лабораторна робота 8</a>
+        </div>
+        <div class="cell">
+            <a href="index.html">Лабораторна робота 9</a>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="infoContainer_1">
+            <div class="cell">
+                Тема/Мета
+            </div>
+            <div class="info_1">
+                Тема: ОБ`ЄКТ. МЕТОДИ ОБ`ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ
+ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК
+КОЛБЕКИ​.
+     <p>Мета: придбати практичні навички роботи з об&#39;єктами. Методи об&#39;єкта..
+        Callback. Стрілочні функції. Стрілочні функції як колбеки ​ .
+        . Реалізація програм засовами мови JAVASCRIPT.</p>
+    
+                </div>
+        </div>
+        <div class="infoContainer_2">
+            <div class="cell">
+                Завдання 1
+            </div>
+            <div class="info_2">
+                <p><img class="scrin3" src="images/laba 6.1.1.jpg" alt=""/></p>
+                <p><img class="scrin3" src="images/laba6.1.2.jpg" alt=""/></p>
+                <pre>
+                    
+                    function getProductDetails(productId, successCallback, errorCallback) {
+                        
+                        const products = {
+                            '123': { name: 'Хліб', price: 50 },
+                            '456': { name: 'Майонез', price: 75 },
+                            '987': { name: 'Риба', price: 130 },
+                        };
+            
+                        if (products[productId]) {
+                            
+                            successCallback(products[productId]);
+                        } else {
+                           
+                            errorCallback('Продукту за таким ID не знайдено');
+                        }
+                    }
+            
+                    
+                    function onSuccess(details) {
+                        const resultContainer = document.getElementById('resultContainer');
+                        resultContainer.innerHTML = `<p>Назва продукту: ${details.name}</p>
+                                                     <p>Ціна: ${details.price}</p>`;
+                    }
+            
+                    
+                    function onError(message) {
+                        const resultContainer = document.getElementById('resultContainer');
+                        resultContainer.innerHTML = <p>Помилка: ${message}</p>;
+                    }
+            
+                    
+                    function searchProduct() {
+                        const productIdInput = document.getElementById('productIdInput');
+                        const productId = productIdInput.value;
+            
+                        getProductDetails(productId, onSuccess, onError);
+                    }
+                </pre>
+            </div>
+        </div>
+        <div class="infoContainer_3">
+            <div class="cell">
+                Завдання 2
+            </div> 
+            <div class="info_3">
+                <p><img class="scrin3" src="images/laba6.2.jpg" alt=""/></p>
+                <pre>
+                    const concerts = {
+                        Київ: new Date("2020-04-01"),
+                        Умань: new Date("2025-07-02"),
+                        Вінниця: new Date("2020-04-21"),
+                        Одеса: new Date("2025-03-15"),
+                        Хмельницький: new Date("2020-04-18"),
+                        Харків: new Date("2025-07-10"),
+                    };
+            
+                    const citiesArray = Object.keys(concerts);
+                    const upcomingCities = citiesArray.filter(city => concerts[city] > new Date());
+                    const sortedCities = upcomingCities.sort((cityA, cityB) => concerts[cityA] - concerts[cityB]);
+            
+                    // Отримуємо елемент, в який будемо вставляти результат
+                    const resultElement = document.getElementById("result");
+            
+                    // Виводимо результат на сторінці
+                    resultElement.textContent = sortedCities.join(', ');
+                </pre>
+            </div>
+        </div>
+        <div class="infoContainer_4">
+            <div class="cell">
+                Завдання 3
+            </div>
+            <div class="info_4">
+                <p><img class="scrin3" src="images/laba6.3.jpg" alt=""/></p>
+              <pre> 
+                    const medicines = [
+                        { id: 1, name: "Ношпа", price: 170 },
+                        { id: 2, name: "Aнальгін", price: 55 },
+                        { id: 3, name: "Парацетамол", price: 310 },
+                        { id: 4, name: "Орасепт", price: 390 },
+                    ];
+            
+                    // Функція для застосування знижки на медикаменти
+                    function applyDiscount(medicines) {
+                        return medicines.map(medicine => {
+                            if (medicine.price > 300) {
+                                return { ...medicine, discountedPrice: 0.7 * medicine.price };
+                            } else {
+                                return medicine;
+                            }
+                        });
+                    }
+            
+                    // Вивід результату на сторінці
+                    const outputElement = document.getElementById("output");
+                    const discountedMedicines = applyDiscount(medicines);
+            
+                    discountedMedicines.forEach(medicine => {
+                        outputElement.innerHTML += <p>ID: ${medicine.id}, Назва: ${medicine.name}, Ціна: ${medicine.price}, Ціна зі знижкою: ${medicine.discountedPrice || 'Без знижки'}</p>;
+                    });
+               </pre>
+            </div>
+        </div>
+        <div class="infoContainer_5">
+            <div class="cell">
+                Завдання 4
+            </div>
+            <div class="info_5">
+               
+                <p><img class="scrin3" src="images/laba6.4.1.jpg" alt=""/></p>
+                <p><img class="scrin3" src="images/laba6.4.2.jpg" alt=""/></p>
+                <pre>
+                    // Функція конструктора Storage
+                    function Storage(initialItems) {
+                        this.items = initialItems || [];
+            
+                        this.getItems = function () {
+                            return this.items;
+                        };
+            
+                        this.addItem = function (item) {
+                            this.items.push(item);
+                        };
+            
+                        this.removeItem = function (item) {
+                            const index = this.items.indexOf(item);
+                            if (index !== -1) {
+                                this.items.splice(index, 1);
+                            }
+                        };
+                    }
+            
+                    // Створення екземпляра Storage
+                    const storage = new Storage(["яблуко", "банан", "манго"]);
+            
+                    // Функція для виведення результатів на сторінці
+                    function displayItems() {
+                        const resultContainer = document.getElementById('resultContainer');
+                        resultContainer.innerHTML = <p>Продукти: ${storage.getItems().join(', ')}</p>;
+                    }
+            
+                    // Функція для додавання нового товару
+                    function addItem() {
+                        const newItemInput = document.getElementById('newItemInput');
+                        const newItem = newItemInput.value;
+                        storage.addItem(newItem);
+                        displayItems();
+                    }
+            
+                    // Функція для видалення товару
+                    function removeItem() {
+                        const removeItemInput = document.getElementById('removeItemInput');
+                        const removeItem = removeItemInput.value;
+                        storage.removeItem(removeItem);
+                        displayItems();
+                    }
+            
+                    // Виведення початкового стану на сторінці
+                    displayItems();
+               </pre>
+            </div>
+        </div>
+        <div class="infoContainer_6">
+            <div class="cell">
+                Завдання 5
+            </div>
+            <div class="info_6">
+                <p><img class="scrin3" src="images/laba6.5.jpg" alt=""/></p>
+                <pre>
+                    const tweets = [
+                        { id: "000", likes: 5, tags: ["js", "nodejs"] },
+                        { id: "001", likes: 2, tags: ["html", "css"] },
+                        { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+                        { id: "003", likes: 8, tags: ["css", "react"] },
+                        { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+                    ];
+            
+                    // Функція для підрахунку кількості тегів
+                    function countTags(tweetsArray) {
+                        const tagCount = {};
+            
+                        tweetsArray.forEach(tweet => {
+                            tweet.tags.forEach(tag => {
+                                tagCount[tag] = (tagCount[tag] || 0) + 1;
+                            });
+                        });
+            
+                        return tagCount;
+                    }
+            
+                    // Виведення результату на сторінці
+                    const result = countTags(tweets);
+                    const resultContainer = document.createElement("div");
+                    resultContainer.innerHTML = <pre>${JSON.stringify(result, null, 4)}</pre>;
+                    document.body.appendChild(resultContainer);
+             </pre>
+            </div>
+        </div>
+        
+        <div class="infoContainer_7">
+            <div class="cell">
+                Завдання 6
+            </div>
+            <div class="info_7">
+                <p><img class="scrin3" src="images/laba6.6.jpg" alt=""/></p>
+                <pre>
+                    // Функція для перевірки правильності закриття дужок
+                    function checkBrackets(str) {
+                        const stack = [];
+                        const brackets = { '(': ')', '{': '}', '[': ']' };
+            
+                        for (let char of str) {
+                            if (brackets[char]) {
+                                // Якщо символ є відкриваючою дужкою, додаємо її в стек
+                                stack.push(char);
+                            } else if (Object.values(brackets).includes(char)) {
+                                // Якщо символ є закриваючою дужкою
+                                const lastBracket = stack.pop();
+                                if (brackets[lastBracket] !== char) {
+                                    // Перевіряємо, чи відповідає закриваюча дужка останній відкриваючій
+                                    return false;
+                                }
+                            }
+                        }
+            
+                        // Перевіряємо, чи всі відкриваючі дужки були закриті
+                        return stack.length === 0;
+                    }
+            
+                    // Приклади вхідних рядків для перевірки
+                    const code1 = "function someFn() { console.log('Hello World'); }";
+                    const code2 = "function someFn() { console.log('Hello World'; }";
+            
+                    // Виведення результатів на сторінці
+                    document.write(<p>Код 1: ${checkBrackets(code1)}</p>);
+                    document.write(<p>Код 2: ${checkBrackets(code2)}</p>);
+                </pre>
+            </div>
+        </div>
+
+        <div class="infoContainer_8">
+            <div class="cell">
+             Посилання 
+            </div>
+            <div class="info_8">
+                <p><a href="https://github.com/SofiaBielchik/laba3.1.git" >Посилання лр6</a></p>
+            </div>
+        </div>
+
+
+        <div class="infoContainer_9">
+            <div class="cell">
+                Висновки
+            </div>
+            <div class="info_9">
+               Завдяки лабораторній роботі №6 я придбала практичні навички роботи з об'єктами, ознаймилася з методами об'єкта
+        Callback, стрілочні функції, стрілочні функції як колбеки, реалізація програм засовами мови JAVASCRIPT.
+            </div>
+        </div> 
+</main>
+</body>
+
+
+
+
+</html>

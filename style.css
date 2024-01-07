@@ -1,0 +1,160 @@
+body{
+    background-color: antiquewhite;
+}
+ 
+.pochatok{
+    text-align: center;
+}
+
+header {
+    display: flex;
+    padding: 30px 10px;
+    justify-content: space-around;
+}
+
+main {
+    padding: 0 20px;
+}
+
+img {
+    width: 150px; 
+    height: auto;  
+}
+
+
+.labs {
+    display: flex;
+    gap: 16px;
+}
+
+.cell {
+    border: 1px solid purple;
+    padding: 8px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.cell a {
+    text-decoration: none;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin-top: 16px;
+}
+
+.info {
+    position: relative;
+}
+
+.info > div > div:last-child {
+    position: absolute;
+    left: 200px;
+    top: 0px;
+}
+
+
+.info > div > div:last-child p {
+   
+}
+
+
+.info .cell {
+    width: 130px;
+}
+
+.infoContainer_1, .infoContainer_2, .infoContainer_3, .infoContainer_4, .infoContainer_5, .infoContainer_6, .infoContainer_7, .infoContainer_8, .infoContainer_9, .infoContainer_10,.infoContainer_11 {
+    display: flex;
+    gap: 50px;
+}
+
+.info_1 {
+    display: none;
+}
+
+.info_2 {
+    display: none;
+}
+
+.info_3 {
+    display: none;
+}
+
+.info_4 {
+    display: none;
+}
+
+.info_5 {
+    display: none;
+}
+
+.info_6 {
+    display: none;
+}
+
+.info_7 {
+    display: none;
+}
+
+.info_8 {
+    display: none;
+}
+
+.info_9 {
+    display: none;
+}
+
+.info_10 {
+    display: none;
+}
+
+.info_11 {
+    display: none;
+}
+
+.infoContainer_1:hover .info_1,
+.infoContainer_2:hover .info_2,
+.infoContainer_3:hover .info_3,
+.infoContainer_4:hover .info_4,
+.infoContainer_5:hover .info_5,
+.infoContainer_6:hover .info_6,
+.infoContainer_7:hover .info_7 ,
+.infoContainer_8:hover .info_8,
+.infoContainer_9:hover .info_9, 
+.infoContainer_10:hover .info_10,
+.infoContainer_11:hover .info_11 {
+    display: flex;
+    flex-direction: column;
+}
+
+.scrin1{
+    height: auto ;
+    width: 600px;
+}
+
+.scrin2{
+    height: auto ;
+    width: 600px;
+}
+
+
+
+.scrin4{
+    height: auto ;
+    width: 600px;
+}
+
+
+.scrin3 {
+    width: 50%; 
+    display: block; 
+  
+}
+
+.scrin4 {
+    width: 30%; 
+    display: block; 
+  
+}

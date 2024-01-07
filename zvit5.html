@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>звіти</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div>
+        <h1 class="pochatok">Звіти з лабораторних робіт</h1>
+        <h2 class="pochatok">З дисципліни "WEB-орієнтовані технології.Основи FRONTEND та BACKEND розробок"</h2>
+        <h3 class="pochatok">Студентки групи ІС-21 Бєльчик Софії Олександрівни</h3>
+    </div>
+    <img src="images/photo.jpg" alt="" >
+</header>
+
+<main>
+
+    <div class="labs">
+
+        <div class="cell">
+            <a href="index.html">Лабораторна робота 1</a>
+        </div>
+        <div class="cell">
+            <a href="zvit2.html">Лабораторна робота 2</a>
+        </div>
+        <div class="cell">
+            <a href="zvit3.html">Лабораторна робота 3</a>
+        </div>
+        <div class="cell">
+            <a href="zvit4.html">Лабораторна робота 4</a>
+        </div>
+        <div class="cell">
+            <a href="zvit5.html">Лабораторна робота 5</a>
+        </div>
+        <div class="cell">
+            <a href="zvit6.html">Лабораторна робота 6</a>
+        </div>
+        <div class="cell">
+            <a href="index.html">Лабораторна робота 7</a>
+        </div>
+        <div class="cell">
+            <a href="index.html">Лабораторна робота 8</a>
+        </div>
+        <div class="cell">
+            <a href="index.html">Лабораторна робота 9</a>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="infoContainer_1">
+            <div class="cell">
+                Тема/Мета
+            </div>
+            <div class="info_1">
+                Тема:ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ.
+                ВИКОРИСТАННЯ МАСИВІВ У JS-СЦЕНАРІЯХ. РЕАЛІЗАЦІЯ ПРОГРАМ
+                ЗАСОВАМИ МОВИ JAVASCRIPT.
+     <p>Мета: придбати практичні навички роботи з масивами у js-сценаріях,
+        реалізації програм засовами мови JAVASCRIPT.
+    
+                </div>
+        </div>
+        <div class="infoContainer_2">
+            <div class="cell">
+                Завдання 1(код)
+            </div>
+            <div class="info_2">
+           <pre>function performOperations() {
+            // Отримання значень з полів введення
+            var arrayAInput = document.getElementById("arrayA").value;
+            var arrayBInput = document.getElementById("arrayB").value;
+        
+            // Парсинг рядків в масиви чисел
+            var arrayA = parseArray(arrayAInput);
+            var arrayB = parseArray(arrayBInput);
+        
+            // Виклик функції для обчислення масиву C
+            var arrayC = calculateArrayC(arrayA, arrayB);
+        
+            // Виведення вхідних масивів та результатів операцій
+            displayArrays("beforeSorting", "Вихідні масиви до сортування:", arrayA, arrayB, arrayC);
+        
+            // Поміняти максимальний елемент і перший в масиві C
+            swapMaxAndFirst(arrayC);
+        
+            // Сортування масиву C
+            bubbleSort(arrayC);
+        
+            // Виведення  відсортованого масиву C
+            displaySortedArray("afterSorting", "Відсортований масив C:", arrayC);
+        }
+        
+        function displaySortedArray(elementId, heading, arrayC) {
+            // Виведення відсортованого масиву С у HTML-елемент
+            var outputElement = document.getElementById(elementId);
+        
+            var outputHTML = "<p>" + heading + "</p>";
+            outputHTML += "<p>Масив C: " + arrayC.join(', ') + "</p>";
+        
+            outputElement.innerHTML = outputHTML;
+        }
+        function parseArray(input) {
+            // Парсинг рядку в масив чисел
+            return input.split(',').map(Number);
+        }
+        
+        function calculateArrayC(arrayA, arrayB) {
+            // Обчислення масиву C
+            var arrayC = [];
+        
+            for (var i = 0; i < Math.min(arrayA.length, arrayB.length); i++) {
+                if (arrayA[i] !== arrayB[i]) {
+                    arrayC.push(1 / (arrayA[i] - arrayB[i]));
+                } else {
+                    arrayC.push(1);
+                }
+            }
+        
+            return arrayC;
+        }
+        
+        function swapMaxAndFirst(array) {
+            // Знаходження індексу максимального елемента
+            var maxIndex = array.indexOf(Math.max(...array));
+        
+            // Поміняти максимальний елемент і перший
+            var temp = array[maxIndex];
+            array[maxIndex] = array[0];
+            array[0] = temp;
+        }
+        
+        function bubbleSort(array) {
+            // Сортування методом бульбашки
+            var n = array.length;
+        
+            for (var i = 0; i < n - 1; i++) {
+                for (var j = 0; j < n - i - 1; j++) {
+                    if (array[j] > array[j + 1]) {
+                        // Обмін елементів, якщо вони в неправильному порядку
+                        var temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        
+        function displayArrays(elementId, heading, arrayA, arrayB, arrayC) {
+            // Виведення масивів у HTML-елемент
+            var outputElement = document.getElementById(elementId);
+        
+            var outputHTML = "<p>" + heading + "</p>";
+            outputHTML += "<p>Масив A: " + arrayA.join(', ') + "</p>";
+            outputHTML += "<p>Масив B: " + arrayB.join(', ') + "</p>";
+            outputHTML += "<p>Масив C: " + arrayC.join(', ') + "</p>";
+        
+            outputElement.innerHTML = outputHTML;
+        }</pre>
+        
+            </div>
+        </div>
+        <div class="infoContainer_3">
+            <div class="cell">
+                Завдання 1 (результат)
+            </div> 
+            <div class="info_3">
+               Операції з масивами :
+                <p><img class="scrin3" src="images/laba5.11.jpg" alt=""/></p>
+                <p><img class="scrin3" src="images/laba5.12.jpg" alt=""/></p>
+            </div>
+        </div>
+        <div class="infoContainer_4">
+            <div class="cell">
+                Завдання 2(код)
+            </div>
+            <div class="info_4">
+             <pre>var isBold = false;
+                var isUnderline = false;
+                var isItalic = false;
+                var isUppercase = false;
+                var textColor = "black";
+                
+                function updateFormattedText() {
+                    var inputText = document.getElementById("inputText");
+                    var formattedText = document.getElementById("formattedText");
+                
+                    var formattedHtml = "";
+                
+                    if (isBold) {
+                        formattedHtml += '<b>';
+                    }
+                
+                    if (isItalic) {
+                        formattedHtml += '<i>';
+                    }
+                
+                    if (isUnderline) {
+                        formattedHtml += '<u>';
+                    }
+                
+                    formattedHtml += '<span style="color: ' + textColor + ';">';
+                
+                    if (isUppercase) {
+                        formattedHtml += inputText.value.toUpperCase();
+                    } else {
+                        formattedHtml += inputText.value;
+                    }
+                
+                    formattedHtml += '</span>';
+                
+                    if (isUnderline) {
+                        formattedHtml += '</u>';
+                    }
+                
+                    if (isItalic) {
+                        formattedHtml += '</i>';
+                    }
+                
+                    if (isBold) {
+                        formattedHtml += '</b>';
+                    }
+                
+                    formattedText.innerHTML = formattedHtml;
+                }
+                
+                function toggleBold() {
+                    isBold = !isBold;
+                    updateFormattedText();
+                }
+                
+                function toggleUnderline() {
+                    isUnderline = !isUnderline;
+                    updateFormattedText();
+                }
+                
+                function toggleItalic() {
+                    isItalic = !isItalic;
+                    updateFormattedText();
+                }
+                
+                function toggleUppercase() {
+                    isUppercase = !isUppercase;
+                    updateFormattedText();
+                }
+                
+                function changeColor() {
+                    var color = prompt("Введіть колір (наприклад, red):");
+                    if (color) {
+                        textColor = color;
+                        updateFormattedText();
+                    }
+                }</pre>
+            </div>
+        </div>
+        <div class="infoContainer_5">
+            <div class="cell">
+                Завдання 2 (результат)
+            </div>
+            <div class="info_5">
+                Мій сайт:
+                <p><img class="scrin3" src="images/laba 5.2.jpg" alt=""/></p>
+            </div>
+        </div>
+        <div class="infoContainer_6">
+            <div class="cell">
+                Завдання 3
+            </div>
+            <div class="info_6">
+                Мій сайт:
+                <p><img class="scrin3" src="images/laba5.3.jpg" alt=""/></p>
+            </div>
+        </div>
+        
+        <div class="infoContainer_7">
+            <div class="cell">
+                Посилання
+            </div>
+            <div class="info_7">
+                <p><a href="https://github.com/SofiaBielchik/laba3.1.git" >Посилання лр5</a></p>
+            </div>
+        </div>
+
+        <div class="infoContainer_8">
+            <div class="cell">
+                Висновки
+            </div>
+            <div class="info_8">
+                Завдяки лабораторній роботі №5 я придбала практичні навички роботи з масивами у js-сценаріях.
+                Реалізація програм засовами мови JAVASCRIPT.
+            </div>
+        </div>
+       
+    
+</main>
+</body>
+
+
+
+
+</html>
